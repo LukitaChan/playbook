@@ -1,0 +1,16 @@
+{
+	"name": "my_launchx-app",
+	"version": "1.0.0",
+	"description": "\"my launchx week_3\"",
+	"main": "index.js",
+	"scripts": {
+		"jest": "npm install --save-dev jest",
+		"start": "node index.js",
+		"test": "jest"
+	},
+	"author": "LukitaChan",
+	"license": "ISC",
+	"devDependencies": {
+		"jest": "^27.5.1"
+	}
+}
