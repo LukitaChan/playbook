@@ -1,0 +1,14 @@
+{
+  "name": "express_basic",
+  "version": "1.0.0",
+  "description": "\"Mi primer server con Express\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "LukitaChan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
