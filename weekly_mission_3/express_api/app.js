@@ -6,7 +6,7 @@ app.use(express.json()); // Indicamos que usaremos JSON
 // Puerto en que vamos a ver nuestra app: localhost:3000
 const port = 3000;
 
-//http methods.
+//http methods. link.
 //http://localhost:3000/v1/explorers
 
 //GET Crea un endpoint que regrese una lista de explorers
