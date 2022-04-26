@@ -5,16 +5,14 @@ const explorers = Reader.readJsonFile("explorers.json");
 //console.log(explorers);
 // (1) esto regresa la lista de explorers del archivo.
 
-const misionN = ExplorerService.filterByMission(explorers, "node");
-//console.log(misionN.length);
+const filtradoPorMision = ExplorerService.filterByMission(explorers, "node");
+//console.log(filtradoPorMision);
 
-const missionGitN = ExplorerService.getAmountOfExplorersByMission(explorers, 'node');
-console.log(missionGitN);
+const cantidadExplorersPorMision = ExplorerService.getAmountOfExplorersByMission(explorers, 'node');
+//console.log(cantidadExplorersPorMision);
 
-// ExplorerService.getExplorersUsernamesByMission(explorers, 'node');
-
-
-
+const obtenerUsernamesPorMision = ExplorerService.getExplorersUsernamesByMission(explorers, 'node');
+console.log(obtenerUsernamesPorMision);
 
 //(Props de objeto: name, githubUsername , score, mission, stacks).
 

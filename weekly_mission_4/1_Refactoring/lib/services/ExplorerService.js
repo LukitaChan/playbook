@@ -7,12 +7,17 @@ class ExplorerService {
 	}
 
 	static getAmountOfExplorersByMission(explorers, mission) {
-    
-
 		// Part 3: Obtener la lista de usuarios de github de los explorers que están en node.
-		// const explorersInNodeToGetUsernames = explorers.filter(explorer => explorer.mission == mission);
-		// return explorersInNodeToGetUsernames;
+		const explorersInNodeToGetUsernames = explorers.filter(explorer => explorer.mission == mission).length;
+		return explorersInNodeToGetUsernames;
 		//console.log(explorersInNodeToGetUsernames);
+	}
+
+	static getExplorersUsernamesByMission(explorers, mission) {
+		const explorersInNodeToGetUsernames = explorers.filter(explorer => explorer.mission == mission);
+		const usernamesInNode = explorersInNodeToGetUsernames.map(explorer => explorer.githubUsername);
+		return usernamesInNode;
+    //console.log(usernamesInNode);
 	}
 }
 
