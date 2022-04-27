@@ -13,7 +13,7 @@ describe('Test para funcion FizzbuzzService', () => {
   test('2. Test para applyValidationInExplorer', () => {
 		const explorersFBS = { score: 3 };
 		const explorers35 = FizzbuzzService.applyValidationInExplorer(explorersFBS);
-		expect(explorers35.trick).toBe("FIZZ");
+		expect(explorers35.trick).toBe("FIZ");
 	});
 
   test('3. Test para applyValidationInExplorer', () => {
