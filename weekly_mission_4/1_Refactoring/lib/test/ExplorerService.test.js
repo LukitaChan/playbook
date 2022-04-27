@@ -1,4 +1,3 @@
-const { exportAllDeclaration } = require("@babel/types");
 const ExplorerService = require("../services/ExplorerService");
 
 describe('Test para ExplorerService:  getAmountOfExplorersByMission y ', () => {
