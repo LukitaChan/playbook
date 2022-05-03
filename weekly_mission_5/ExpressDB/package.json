@@ -1,0 +1,22 @@
+{
+	"name": "express_y_db",
+	"version": "1.0.0",
+	"description": "Semana 5, Ejercicio 3",
+	"main": "index.js",
+	"scripts": {
+		"start": "node server.js",
+		"prisma": "node prisma/seed.js",
+		"nodemon": "nodemon server.js"
+	},
+	"author": "LukitaChan",
+	"license": "ISC",
+	"devDependencies": {
+		"express": "^4.18.1",
+		"prisma": "^3.13.0"
+	},
+	"dependencies": {
+		"@prisma/client": "^3.13.0",
+		"cors": "^2.8.5",
+		"nodemon": "^2.0.16"
+	}
+}
