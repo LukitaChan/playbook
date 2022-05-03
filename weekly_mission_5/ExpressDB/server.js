@@ -28,6 +28,11 @@ app.get('/usertable', async (req, res) => {
 	res.json(allUsers);
 });
 
+app.get('/missionCommander', async (req, res) => {
+	const alls = await prisma.missionCommander.findMany({});
+	res.json(alls);
+});
+
 //Agrega un nuevo endpoint GET que te regrese el explorer al enviar un ID por query params.
 app.get('/explorers/:id', async (req, res) => {
 	const id = req.params.id;
@@ -38,6 +43,12 @@ app.get('/explorers/:id', async (req, res) => {
 app.get('/usertable/:id', async (req, res) => {
 	const id = req.params.id;
 	const user = await prisma.userTable.findUnique({ where: { id: parseInt(id) } });
+	res.json(user);
+});
+
+app.get('/missionCommander/:id', async (req, res) => {
+	const id = req.params.id;
+	const user = await prisma.missionCommander.findUnique({ where: { id: parseInt(id) } });
 	res.json(user);
 });
 
@@ -64,6 +75,19 @@ app.post('/usertable', async (req, res) => {
 	return res.json({ message });
 });
 
+app.post('/missionCommander', async (req, res) => {
+	const user = {
+		name: req.body.name,
+		username: req.body.username,
+		mainStack: req.body.mainstack,
+		currentEnrollment: req.body.currentEnrollment,
+		azureCertification: req.body.azureCertification
+	};
+	const message = 'Has creado un nuevo User';
+	await prisma.missionCommander.create({ data: user });
+	return res.json({ message });
+});
+
 //Crea un nuevo endpoint PUT, en el cuál recibirás el ID del explorer a actualizar, y en el cuerpo del request los campos a actualizar, para este caso solo haremos el update del campo mission.
 app.put('/explorers/:id', async (req, res) => {
 	const id = parseInt(req.params.id);
@@ -85,6 +109,16 @@ app.put('/usertable/:id', async (req, res) => {
 	return res.json({ message: 'La base de datos ha sido actualizada :) ' });
 });
 
+app.put('/missionCommander/:id', async (req, res) => {
+	const id = parseInt(req.params.id);
+
+	await prisma.missionCommander.update({
+		where: { id: id },
+		data: { mainStack: req.body.mainStack }
+	});
+	return res.json({ message: 'mainStack ha sido actualizado' });
+});
+
 //Crea un nuevo endpoint DELETE para eliminar un explorer dado un ID por query params.
 app.delete('/explorers/:id', async (req, res) => {
 	const id = parseInt(req.params.id);
@@ -100,6 +134,14 @@ app.delete('/usertable/:id', async (req, res) => {
 		where: { id: id }
 	});
 	return res.json({ message: 'User eliminado correctamente' });
+});
+
+app.delete('/missionCommander/:id', async (req, res) => {
+	const id = parseInt(req.params.id);
+	await prisma.missionCommander.delete({
+		where: { id: id }
+	});
+	return res.json({ message: 'Explorer eliminado correctamente' });
 });
 
 app.listen(port, () => {

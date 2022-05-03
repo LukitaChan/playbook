@@ -87,6 +87,30 @@ const prisma = new PrismaClient();
 			}
 		});
 
+		const woopa6 = await prisma.missionCommander.upsert({
+			where: { name: 'Suri' },
+			update: {},
+			create: {
+				name: 'Suri',
+				username: 'Alpaca',
+				mainStack: 'Que es Eso',
+				currentEnrollment: true,
+				azureCertification: false
+			}
+		});
+
+		const woopa7 = await prisma.missionCommander.upsert({
+			where: { name: 'Saber' },
+			update: {},
+			create: {
+				name: 'Saber',
+				username: 'Arturia',
+				mainStack: 'Que es que',
+				currentEnrollment: true,
+				azureCertification: true
+			}
+		});
+
 		console.log('Create explorers');
 	} catch (e) {
 		console.error(e);
