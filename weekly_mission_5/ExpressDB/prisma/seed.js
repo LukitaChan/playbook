@@ -111,6 +111,18 @@ const prisma = new PrismaClient();
 			}
 		});
 
+		const woopa8 = await prisma.missionCommander.upsert({
+			where: { name: 'Kocho' },
+			update: {},
+			create: {
+				name: 'Kocho',
+				username: 'Shinobu',
+				mainStack: 'Elm',
+				currentEnrollment: false,
+				azureCertification: true
+			}
+		});
+
 		console.log('Create explorers');
 	} catch (e) {
 		console.error(e);
